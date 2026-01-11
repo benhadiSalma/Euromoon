@@ -1,0 +1,72 @@
+PROJECT EUROMOON - FUNCTIONAL ANALYSIS
+Naam: Benhadi Salma
+Vak: Programming Advanced & Project Flow
+
+---------------------------------------------------------
+US-01: model.Passagier Registratie
+Als loketbediende wil ik snel een nieuwe passagier kunnen registreren (Naam, Rijksregister, etc.) zodat deze persoon in ons systeem zit voor boekingen.
+
+Acceptance Criteria:
+- AC 1.1: Input velden nodig voor Naam, Voornaam, Rijksregisternummer en Geboortedatum.
+- AC 1.2: Check of het rijksregisternummer uniek is. Geen dubbels toegelaten.
+- AC 1.3: De passagier wordt toegevoegd aan de algemene lijst van personen.
+
+---------------------------------------------------------
+US-02: Reis Planning
+Als planner wil ik een reis kunnen aanmaken tussen twee hoofdsteden met een trein en personeel, zodat deze rit ingepland staat.
+
+Acceptance Criteria:
+- AC 2.1: Een reis moet een start, eind, datum en tijd hebben.
+- AC 2.2: Er moet een trein aan gekoppeld zijn (model.Locomotief + Wagons).
+- AC 2.3: Personeel check: Mag niet opslaan zonder minstens 1 bestuurder en 3 stewards.
+- AC 2.4: De capaciteit (aantal zitplaatsen) wordt automatisch bepaald door de trein.
+
+---------------------------------------------------------
+US-03: Ticketverkoop (Basis)
+Als loketbediende wil ik een ticket verkopen aan een klant voor een bepaalde reis, zodat zijn plaats gereserveerd is.
+
+Acceptance Criteria:
+- AC 3.1: Ik moet een passagier en een reis kunnen selecteren.
+- AC 3.2: Het systeem moet checken of er nog plaats is (Verkocht < Capaciteit).
+- AC 3.3: Er wordt een ticket aangemaakt met een unieke referentiecode.
+
+---------------------------------------------------------
+US-04: Prijsberekening (Extra Feature)
+Als loketbediende wil ik dat de prijs automatisch berekend wordt (afstand, leeftijd, klasse) zodat ik zelf niet moet rekenen.
+
+Acceptance Criteria:
+- AC 4.1: Basisprijs gaat per km (vaste afstanden in systeem).
+- AC 4.2: Korting toepassen: Kinderen (<12j) = -50%, Senioren (>65j) = -20%.
+- AC 4.3: Toeslag rekenen voor 1ste klasse.
+
+---------------------------------------------------------
+US-05: Volzet & Alternatieven (Extra Feature)
+Als loketbediende wil ik een waarschuwing als de trein vol is en direct een ander voorstel zien, zodat ik de klant kan helpen.
+
+Acceptance Criteria:
+- AC 5.1: Melding "VOLZET" tonen als er geen plaats meer is.
+- AC 5.2: Het systeem zoekt zelf de volgende rit naar dezelfde bestemming.
+- AC 5.3: Het systeem toont dit alternatief op het scherm.
+
+---------------------------------------------------------
+US-06: Boarding Lijst
+Als conducteur wil ik de passagierslijst kunnen exporteren naar een tekstbestand, zodat ik controle kan doen op de trein.
+
+Acceptance Criteria:
+- AC 6.1: Bestandsnaam moet dynamisch zijn (bv. Brussel_Parijs_Datum.txt).
+- AC 6.2: Alle namen van passagiers op die rit moeten erin staan.
+
+---------------------------------------------------------
+US-07: Informatie Opzoeken (Search)
+Als loketbediende of admin wil ik specifieke details kunnen opzoeken (een ticket via code, of personeel via naam) om gegevens te controleren.
+
+Acceptance Criteria:
+- AC 7.1: Ticket Info: Als ik een unieke ticket-code invoer, moet het systeem alle details van dat ticket tonen.
+- AC 7.2: Personeel Info: Als ik de naam van een medewerker ingeef, moet ik zijn lijst met certificaten/diploma's zien.
+
+---------------------------------------------------------
+BRONVERMELDING & TOOLS
+Dit document is opgesteld door de student.
+Gebruikte hulpmiddelen:
+- Cursusmateriaal Programming Advanced & Project Flow.
+- Generatieve AI (als taalcoach voor spellingcorrectie en formulering).
