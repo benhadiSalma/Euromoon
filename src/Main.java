@@ -9,6 +9,7 @@ import java.util.Scanner;
 
 /**
  * Hoofdklasse van de applicatie Euromoon.
+ * Menu opstelling
  * @author Selma Benhadi
  */
 public class Main {
