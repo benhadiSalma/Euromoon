@@ -19,6 +19,17 @@ public class TicketService {
         this.verkochteTickets = new ArrayList<>();
     }
 
+    /**
+     * Verkoopt een ticket aan een passagier voor een specifieke reis.
+     * Controleert eerst of er nog plaatsen beschikbaar zijn op de trein.
+     * De ticketprijs wordt berekend op basis van leeftijd, klasse en type ticket.
+     * Bij een succesvolle verkoop wordt het ticket opgeslagen en gelogd.
+     *
+     * @param r De reis waarvoor het ticket wordt aangekocht
+     * @param p De passagier die het ticket koopt
+     * @param klasse De gekozen klasse (eerste of tweede)
+     * @param type Het type ticket (enkel of heen-terug)
+     */
     public void koopTicket(Reis r, Passagier p, KlasseType klasse, TicketType type) {
         int aantalVerkocht = 0;
         for (Ticket t : verkochteTickets) {
@@ -78,12 +89,19 @@ public class TicketService {
     public List<Ticket> getVerkochteTickets() {
         return verkochteTickets;
     }
-
+    /**
+     * Drukt de boardinglijst af voor een specifieke reis.
+     * De boardinglijst bevat alle passagiers met een geldig ticket voor deze reis
+     * en het vaste boordpersoneel van de trein die de reis uitvoert.
+     * Het resultaat wordt opgeslagen in een tekstbestand.
+     *
+     * @param r De reis waarvoor de boardinglijst wordt aangemaakt
+     */
     public void printBoardingLijst(Reis r) {
         String veiligeTijd = r.getTijdstip().toString().replace(":", "-");
         String bestandsNaam = r.getVertrekStation() + "_" + r.getAankomstStation() + "_" + veiligeTijd + ".txt";
 
-        System.out.println("⏳ Bezig met genereren van boardinglijst...");
+        System.out.println("Bezig met genereren van boardinglijst...");
         try (FileWriter writer = new FileWriter(bestandsNaam)) {
             writer.write("=========================================\n");
             writer.write("              BOARDINGLIJST              \n");

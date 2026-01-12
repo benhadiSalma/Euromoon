@@ -7,12 +7,15 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Scanner;
-
 /**
- * Hoofdklasse van de applicatie Euromoon.
- * Menu opstelling
+ * Hoofdklasse van de Euromoon applicatie.
+ * Deze klasse bevat het hoofdmenu van de applicatie en laat de gebruiker toe
+ * om passagiers te registreren, reizen aan te maken, tickets te verkopen
+ * en boardinglijsten af te drukken.
+ * De Main klasse stuurt de applicatie aan, maar bevat geen businesslogica.
  * @author Selma Benhadi
  */
+
 public class Main {
 
     public static void main(String[] args) {
