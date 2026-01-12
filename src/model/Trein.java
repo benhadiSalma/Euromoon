@@ -12,11 +12,14 @@ public class Trein {
     private String naam;
     private Locomotief locomotief;
     private List<Wagon> wagons;
+    private List<Staff> boordPersoneel;
+
 
     public Trein(String naam, Locomotief deLoco){
         this.naam = naam;
         this.locomotief = deLoco;
         this.wagons = new ArrayList<>();
+        this.boordPersoneel = new ArrayList<>();
     }
 
     public String getNaam() {
@@ -43,5 +46,17 @@ public class Trein {
     }
     public int getCapaciteit(){
         return this.locomotief.getWagon() * this.locomotief.getPlaats();
+    }
+
+    /**
+     * Voegt een personeelslid toe aan het boordpersoneel van de trein.
+     * @param staff Personeelslid (Steward of Conductor)
+     */
+    public void voegPersoneelToe(Staff staff){
+        boordPersoneel.add(staff);
+    }
+
+    public List<Staff> getBoordPersoneel(){
+        return boordPersoneel;
     }
 }

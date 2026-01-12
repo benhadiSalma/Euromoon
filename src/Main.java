@@ -2,6 +2,7 @@ import logic.PassagierService;
 import logic.TicketService;
 import model.*;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.ArrayList;
@@ -55,6 +56,31 @@ public class Main {
         reizen.add(new Reis("Brussel", "Amsterdam", LocalDateTime.of(2025, 5, 20, 11, 15), 45.0, trein2));
         reizen.add(new Reis("Brussel", "Londen", LocalDateTime.of(2025, 5, 21, 9, 30), 60.0, trein1));
 
+        List<Staff> personeel = new ArrayList<>();
+
+        Steward steward1 = new Steward("Asushi","Lina","95.03.12-111.22", LocalDate.of(1995,3,12));
+        steward1.voegCertificaat("EHBO");
+
+        Steward steward2 = new Steward("Hurani","Marwan","92.11.08-333.44", LocalDate.of(1992,11,8));
+        steward2.voegCertificaat("Brandveiligheid");
+
+        Steward steward3 = new Steward("Bensahour","Sara","98.07.21-555.66", LocalDate.of(1998,7,21));
+        steward3.voegCertificaat("Evacuatieprocedures");
+
+        Conductor conductor = new Conductor("Aaiachi","Farid","85.01.30-777.88", LocalDate.of(1985,1,30));
+        conductor.voegCertificaat("Treinbesturing");
+
+        personeel.add(steward1);
+        personeel.add(steward2);
+        personeel.add(steward3);
+        personeel.add(conductor);
+
+        trein1.voegPersoneelToe(steward1);
+        trein1.voegPersoneelToe(steward2);
+        trein1.voegPersoneelToe(steward3);
+        trein1.voegPersoneelToe(conductor);
+
+
 
         System.out.println("======== WELKOM BIJ EUROMOON ==========");
 
@@ -66,6 +92,7 @@ public class Main {
             System.out.println("4. Zoek een ticket");
             System.out.println("5. Bekijk Boardinglijst ");
             System.out.println("6. Maak een nieuwe reis aan");
+            System.out.println("7. Zoek personeel");
             System.out.println("0. Sessie stoppen");
 
             System.out.print("Uw keuze : ");
@@ -155,7 +182,7 @@ public class Main {
 
                             while(his.hasNextLine()){
                                 String ligne = his.nextLine();
-                                System.out.println("📄 " + ligne);
+                                System.out.println(" " + ligne);
                             }
                             his.close();
                         } catch (Exception e) {
