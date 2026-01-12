@@ -6,7 +6,6 @@ import java.time.LocalDateTime;
  * @author Selma Benhadi
  */
 public class Reis {
-    private String reis;
     private String vertrekStation;
     private String aankomstStation;
     private LocalDateTime tijdstip;

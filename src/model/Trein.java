@@ -1,18 +1,19 @@
 package model;
+
 import java.util.ArrayList;
 import java.util.List;
+
 /**
  * De Trein klasse beheert de samenstelling van een trein.
- * Het bevat een locomotief en een lijst van wagons, en zorgt ervoor
- * dat de regels van de locomotief (maximaal aantal wagons) gerespecteerd worden.
+ * Het bevat een locomotief en een lijst van wagons.
  * @author Selma Benhadi
  */
 public class Trein {
     private String naam;
-    private LocomotiefModel locomotief;
+    private Locomotief locomotief;
     private List<Wagon> wagons;
 
-    public Trein(String naam, LocomotiefModel deLoco){
+    public Trein(String naam, Locomotief deLoco){
         this.naam = naam;
         this.locomotief = deLoco;
         this.wagons = new ArrayList<>();
@@ -22,14 +23,13 @@ public class Trein {
         return naam;
     }
 
-    public LocomotiefModel getLocomotiefModel() {
+    public Locomotief getLocomotief() {
         return locomotief;
     }
 
-    public List<Wagon> getAantalWagons() {
+    public List<Wagon> getWagons() {
         return wagons;
     }
-
     /**
      * Voegt een nieuwe wagon toe aan de trein als de capaciteit het toelaat.
      * Controleert eerst of het huidige aantal wagons kleiner is dan het maximum
@@ -37,14 +37,11 @@ public class Trein {
      * * @param nieuwWagon De wagon die toegevoegd moet worden aan de lijst.
      */
     public void voegWagonToe(Wagon hetWagon){
-        int max = this.locomotief.getMaxWagons();
-
-        if(this.wagons.size() < this.locomotief.getMaxWagons()){
+        if(this.wagons.size() < this.locomotief.getWagon()){
             this.wagons.add(hetWagon);
-            System.out.println("Wagon toegevoegd aan de trein " + this.naam);
         }
-        else{
-            System.out.println("de trein is compleet ! De locomotief kan niet meer trekken.");
-        }
+    }
+    public int getCapaciteit(){
+        return this.locomotief.getWagon() * this.locomotief.getPlaats();
     }
 }
