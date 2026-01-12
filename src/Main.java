@@ -220,6 +220,41 @@ public class Main {
                             System.out.println("Reis toegevoegd!");
                         }
                         break;
+                    case 7:
+                        System.out.println("------- ZOEK PERSONEEL -------");
+                        System.out.print("Geef de naam van het personeelslid: ");
+                        String zoekNaam = scanner.nextLine();
+
+                        boolean gevondenStaff = false;
+
+                        for (Trein t : treinenVloot) {
+                            for (Staff s : t.getBoordPersoneel()) {
+                                if (s.getNaam().equalsIgnoreCase(zoekNaam)) {
+                                    gevondenStaff= true;
+
+                                    System.out.println("Personeelslid gevonden");
+                                    System.out.println("Naam: " + s.getNaam() + " " + s.getVoornaam());
+                                    System.out.println("Functie: " + s.getClass().getSimpleName());
+                                    System.out.println("Trein: " + t.getNaam());
+
+                                    if (s.getCertificaten().isEmpty()) {
+                                        System.out.println("Geen certificaten geregistreerd.");
+                                    } else {
+                                        System.out.println("Certificaten:");
+                                        for (String cert : s.getCertificaten()) {
+                                            System.out.println(" - " + cert);
+                                        }
+                                    }
+                                    break;
+                                }
+                            }
+                        }
+
+                        if (!gevondenStaff) {
+                            System.out.println("Geen personeelslid gevonden.");
+                        }
+                        break;
+
 
                     case 0:
                         System.out.println("Bedankt voor het gebruik van EUROMOON. Tot ziens!");

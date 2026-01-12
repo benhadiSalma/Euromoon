@@ -38,8 +38,8 @@ public class TicketService {
 
             System.out.println("Ticket verkocht! ID: " + ticketId + " - Prijs: €" + String.format("%.2f", finalePrijs));
 
-            try (FileWriter writer = new FileWriter("Logboek.txt", true)) { // TRUE = Ajoute à la suite
-                writer.write("Achat: " + ticketId + " | " + p.getNaam() + " | " + r.getAankomstStation() + " | Prijs: " + finalePrijs + "\n");
+            try (FileWriter writer = new FileWriter("Logboek.txt", true)) {
+                writer.write("Aankoop : " + ticketId + " | " + p.getNaam() + " | " + r.getAankomstStation() + " | Prijs: " + finalePrijs + "\n");
             } catch (IOException e) {
                 System.out.println("Fout bij opslaan in logboek.");
             }
@@ -107,6 +107,25 @@ public class TicketService {
 
             if (count == 0) writer.write("Geen passagiers voor deze reis.\n");
             writer.write("Totaal passagiers: " + count + "\n");
+
+            // Staff
+            writer.write("\n=========================================\n");
+            writer.write("BOORDPERSONEEL\n");
+            writer.write("=========================================\n");
+
+            if (r.getReisTrein().getBoordPersoneel().isEmpty()) {
+                writer.write("Geen boordpersoneel toegewezen aan deze trein.\n");
+            } else {
+                for (Staff s : r.getReisTrein().getBoordPersoneel()) {
+                    writer.write("- "
+                            + s.getClass().getSimpleName()
+                            + ": "
+                            + s.getNaam()
+                            + " "
+                            + s.getVoornaam()
+                            + "\n");
+                }
+            }
 
             System.out.println("SUCCES! Bestand aangemaakt: " + bestandsNaam);
 
