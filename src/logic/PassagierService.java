@@ -32,7 +32,7 @@ public class PassagierService {
 
         if(!bestaat){
             passsagiersLijst.add(nieuwPassagier);
-            System.out.println("Passagier toegevoegd: " + nieuwPassagier.getNaam() + nieuwPassagier.getVoornaam());
+            System.out.println("Passagier toegevoegd: " + nieuwPassagier.getNaam() + " " + nieuwPassagier.getVoornaam());
         }
         else{
             System.out.println("fout : Deze passagier bestaat al!!");
