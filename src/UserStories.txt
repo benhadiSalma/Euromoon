@@ -21,7 +21,7 @@ ACCEPTANCE CRITERIA:
 2. (AC 1.2) Validatie: Het rijksregisternummer moet uniek zijn en het juiste formaat hebben.
 3. (Extra) Find-or-Create: Bestaande passagiers worden direct herkend.
 
-VALIDATIE (Gherkin):
+VALIDATIE:
 - Given: De loketbediende voert "99.02.20-123.45" in.
 - When: Het formaat klopt EN het nummer bestaat nog niet.
 - Then: Vraagt het systeem om naam en geboortedatum om een nieuwe passagier te maken.
@@ -40,7 +40,7 @@ ACCEPTANCE CRITERIA:
 2. (AC 2.3) Staff Hierarchy: Een trein moet minstens 1 Conductor en stewards hebben.
 3. (AC 2.3) Certificaten: Het personeel moet over de juiste certificaten beschikken.
 
-VALIDATIE (Gherkin):
+VALIDATIE:
 - Given: De admin wil een nieuwe reis "Brussel-Berlijn" maken.
 - When: Hij een trein selecteert die personeel heeft (Conductor + Stewards).
 - Then: Wordt de reis opgeslagen en zichtbaar in het menu.
@@ -60,7 +60,7 @@ ACCEPTANCE CRITERIA:
 3. (AC 3.1) Koppeling: Het ticket moet de passagier aan de specifieke reis linken.
 4. (Extra) Duplicaten: Een passagier mag niet 2x op dezelfde trein zitten.
 
-VALIDATIE (Gherkin):
+VALIDATIE:
 - Given: De trein is vol (Sold = Capaciteit).
 - When: Ik probeer een ticket te kopen.
 - Then: Toont het systeem "VOLZET" en stopt de verkoop.
@@ -80,7 +80,7 @@ ACCEPTANCE CRITERIA:
 3. (AC 4.3) Eerste Klasse: Toeslag van 50% (x 1.5).
 4. (Extra) Type Ticket: Heen-en-terug verdubbelt de prijs (x 2).
 
-VALIDATIE (Gherkin):
+VALIDATIE :
 - Given: Passagier is 10 jaar oud (<12) en basisprijs is €100.
 - When: Het ticket wordt aangemaakt.
 - Then: Is de definitieve prijs €75.
@@ -89,7 +89,6 @@ VALIDATIE (Gherkin):
 US-05: ALTERNATIEVEN BIJ VOLZET (Extra Feature)
 ------------------------------------------------------------------------------
 (Geen Excel Ref - Toegevoegde waarde voor project)
-
 USER STORY:
 "Als loketbediende wil ik direct een alternatieve rit zien als de gekozen trein
 volzet is, zodat ik de klant snel kan verder helpen."
@@ -113,6 +112,4 @@ ACCEPTANCE CRITERIA:
 2. Lijst bevat Passagiers (Naam + ID) en Staff.
 3. Zoekfunctie: Ticket info opvragen via UUID.
 
-==============================================================================
-                              END OF DOCUMENT
 ==============================================================================
