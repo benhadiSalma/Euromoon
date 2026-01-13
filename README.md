@@ -1,90 +1,56 @@
-# Project Euromoon – Treinmaatschappij Applicatie
+# Euromoon - Trein Ticket Systeem
 
 ## Projectomschrijving
-Dit project is een Java Command Line Interface (CLI) applicatie ontwikkeld
-voor de fictieve treinmaatschappij **Euromoon**.  
-De applicatie laat toe om passagiers te registreren, internationale treinreizen
-aan te maken en tickets te verkopen met automatische prijsberekening en
-capaciteitscontrole.
+Dit project is een Java Command Line Interface (CLI) applicatie ontwikkeld voor de fictieve treinmaatschappij **Euromoon**. De applicatie faciliteert het beheer van internationale treinreizen, passagiersregistratie en ticketverkoop met geautomatiseerde prijsberekening en capaciteitscontrole.
 
-Het project werd uitgewerkt als proof of concept binnen het vak  
-**Programming Advanced & Project Flow** aan de Erasmushogeschool Brussel.
-
----
+Dit project is uitgevoerd als *Proof of Concept* (PoC) voor het vak **Programming Advanced & Project Flow** aan de Erasmushogeschool Brussel.
 
 ## Functionaliteiten
-- **Passagierbeheer**  
-  Registratie van passagiers met controle op een uniek rijksregisternummer.
 
-- **Reisplanning**  
-  Aanmaken van reizen tussen Europese hoofdsteden, gekoppeld aan specifieke
-  treinen (locomotieven en wagons).
+### 1. Passagierbeheer & Registratie
+* **Identificatie:** Registratie op basis van het Rijksregisternummer.
+* **Validatie:** Gebruik van **Reguliere Expressies (Regex)** om het strikte formaat `xx.xx.xx-xxx.xx` te waarborgen.
+* **Uniciteit:** Controle op dubbele registraties in het systeem.
 
-- **Treinbeheer**  
-  Beheer van treinsamenstellingen met locomotieven en wagons, rekening houdend
-  met maximale capaciteit.
+### 2. Reisplanning & Treinbeheer
+* **Reisbeheer:** Aanmaken van trajecten tussen Europese hoofdsteden met specifieke tijdstippen.
+* **Vloot:** Koppeling van reizen aan treinen bestaande uit een locomotief en een variabel aantal wagons.
+* **Capaciteit:** Automatische berekening van het maximaal aantal zitplaatsen.
 
-- **Ticketverkoop**  
-  Verkoop van tickets in eerste en tweede klasse met automatische kortingen:
-  - Kinderen jonger dan 12 jaar: -25%
-  - Senioren vanaf 65 jaar: -15%
+### 3. Ticketverkoop (Core Logic)
+* **Unieke Identificatie:** Elk ticket krijgt een universeel unieke code via de **Java UUID-standaard** (Universally Unique Identifier).
+* **Prijsberekening:** Geautomatiseerde logica gebaseerd op:
+    * **Leeftijd:** Kortingen voor kinderen (-25%) en senioren (-15%).
+    * **Klasse:** Toeslag voor 1ste klasse (x1.5).
+    * **Type:** Verdubbeling van de prijs voor heen-en-terug tickets (x2).
+* **Volzet-beheer:** Automatische detectie van volle treinen met een suggestiesysteem voor alternatieve tijdstippen.
 
-- **Boardinglijst**  
-  Genereren van een tekstbestand per reis met:
-  - alle passagiers met een geldig ticket
-  - het vaste boordpersoneel (conducteur en stewards) van de trein
+### 4. Boardinglijst & Rapportage
+* **Export:** Genereren van een `.txt` bestand per reis met daarin de passagierslijst en het toegewezen boordpersoneel (Conductor & Stewards).
+* **Logging:** Bijhouden van alle verkopen in een centraal logboekbestand (`Logboek.txt`).
 
-- **Zoekfunctionaliteit**  
-  Opzoeken van tickets via een unieke ticket-ID.
-
----
-
-## Planning en planmatig werken
-De planning van dit project werd opgevolgd aan de hand van een product backlog
-in Excel (**ProductBacklog.xlsx**).  
-In deze backlog werden de user stories, taken en voortgang per functionaliteit
-gestructureerd bijgehouden.
-
-Alle essentiële functionaliteiten uit de opdracht werden geïmplementeerd
-volgens deze planning.
-
----
+## Planning en Methodologie
+De ontwikkeling werd gestuurd door een **Product Backlog** (Excel), waarbij gewerkt werd met User Stories en Acceptance Criteria (AC). De voortgang is nauwkeurig opgevolgd om te voldoen aan de technische vereisten van de opdracht.
 
 ## Gebruik van AI-tools
-Tijdens de ontwikkeling van dit project werd gebruik gemaakt van AI-tools
-als **ondersteunend hulpmiddel**.
+Tijdens dit project werd AI (Gemini & ChatGPT) ingezet als **interactieve taalcoach** en ondersteunend hulpmiddel.
+* **Taalondersteuning:** Verbetering van de Nederlandstalige formuleringen in de interface en de documentatie (User Stories).
+* **Debugging:** Ondersteuning bij het oplossen van Scanner-gerelateerde problemen en complexe Regex-patronen.
+* **Logische Structuur:** Hulp bij het automatiseren van de vloot-initialisatie (het automatisch opvullen van treinen met locomotieven, wagons en personeel) om een functionele testomgeving te creëren.
+* **Documentatie:** Hulp bij het structureren van de README en Javadoc volgens de academische standaarden.
+* *Noot: De volledige logica, architectuur en finale implementaties zijn handmatig uitgevoerd en gevalideerd door de student.*
 
-**Gemini (Google AI)** werd gebruikt voor:
-- Ondersteuning bij het structureren van de code
-  (scheiding tussen de packages `model` en `logic`).
-- Hulp bij debugging van invoerproblemen met de Java `Scanner`.
-- Verbetering en verduidelijking van Javadoc-documentatie.
-- Taalondersteuning (spelling, formulering en vertaling van technische termen).
+## Bronvermelding (APA-stijl)
 
-**ChatGPT (OpenAI)** werd gebruikt in een latere fase van het project voor:
-- Relecture en inhoudelijke versterking van bestaande code.
-- Controleren van de samenhang met de user stories en beoordelingscriteria.
-- Verbeteren van documentatie en README-structuur.
+Erasmushogeschool Brussel. (2025). *Programming Advanced: Syllabus en cursusmateriaal*. Brussel: EhB.
 
-Alle door AI gegenereerde suggesties werden kritisch nagelezen, aangepast
-en gevalideerd door de student.  
-De uiteindelijke code, ontwerpkeuzes en implementaties zijn volledig eigen werk.
+Erasmushogeschool Brussel. (2025). *Project Flow: Agile & Scrum methodologie*. Brussel: EhB.
 
----
+Oracle. (z.d.). *Pattern (Java Platform SE 8 )*. Geraadpleegd op 8 januari 2026, van https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html
 
-## Gebruikte bronnen
-- Cursusmateriaal **Programming Advanced & Project Flow**  
-  (Erasmushogeschool Brussel).
-- Java Oracle Documentation:
-  - `java.time.LocalDate`
-  - `java.time.LocalDateTime`
-  - `java.time.Period`
-- Eigen code-archief uit eerdere labo’s en opdrachten van dit academiejaar.
-
----
+Oracle. (z.d.). *UUID (Java Platform SE 8 )*. Geraadpleegd op 8 januari 2026, van https://docs.oracle.com/javase/8/docs/api/java/util/UUID.html
 
 ## Auteur
-**Selma Benhadi**  
-Student Programming Advanced & Project Flow  
+**Selma Benhadi** Student Programming Advanced & Project Flow  
 Erasmushogeschool Brussel (EhB)
 
