@@ -1,0 +1,26 @@
+=========================================
+              BOARDINGLIJST              
+=========================================
+Reis: Brussel -> Parijs
+Vertrek: 2025-05-20T10:00
+Trein: Brussel-London
+-----------------------------------------
+Passagier #1
+ - Naam: B F
+ - RRN: 52489632574
+ - Ticket ID: TICKET-1
+-----------------------------------------
+Passagier #2
+ - Naam: b s
+ - RRN: 125478653
+ - Ticket ID: TICKET-2
+-----------------------------------------
+Totaal passagiers: 2
+
+=========================================
+BOORDPERSONEEL
+=========================================
+- Steward: Asushi Lina
+- Steward: Hurani Marwan
+- Steward: Bensahour Sara
+- Conductor: Aaiachi Farid

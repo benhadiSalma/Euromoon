@@ -7,6 +7,7 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * Service klasse voor het beheren van ticketverkoop.
@@ -43,14 +44,14 @@ public class TicketService {
         if (aantalVerkocht < maxCapaciteit) {
             double finalePrijs = berekenPrijs(p, r, klasse, type);
 
-            String ticketId = "TICKET-" + (verkochteTickets.size() + 1);
+            String ticketId = UUID.randomUUID().toString();
             Ticket nieuwTicket = new Ticket(p, r, ticketId, finalePrijs);
             verkochteTickets.add(nieuwTicket);
 
             System.out.println("Ticket verkocht! ID: " + ticketId + " - Prijs: €" + String.format("%.2f", finalePrijs));
 
             try (FileWriter writer = new FileWriter("Logboek.txt", true)) {
-                writer.write("Aankoop : " + ticketId + " | " + p.getNaam() + " | " + r.getAankomstStation() + " | Prijs: " + finalePrijs + "\n");
+                writer.write("Aankoop : " + ticketId + " | " + p.getNaam() + " | " + p.getVoornaam() + " | " + r.getAankomstStation() + " | Prijs: " + finalePrijs + "\n");
             } catch (IOException e) {
                 System.out.println("Fout bij opslaan in logboek.");
             }
@@ -128,7 +129,7 @@ public class TicketService {
 
             // Staff
             writer.write("\n=========================================\n");
-            writer.write("BOORDPERSONEEL\n");
+            writer.write("               BOORDPERSONEEL\n            ");
             writer.write("=========================================\n");
 
             if (r.getReisTrein().getBoordPersoneel().isEmpty()) {
@@ -150,5 +151,7 @@ public class TicketService {
         } catch (IOException e) {
             System.out.println("Fout bij het maken van bestand: " + e.getMessage());
         }
+
+
     }
 }
