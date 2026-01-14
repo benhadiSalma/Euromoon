@@ -963,3 +963,6 @@ Aankoop : 19c1c789-ec32-4d76-bb54-c0a1ebe6e499 | Ghost | Tester | Parijs | Prijs
 Aankoop : e5e5521f-6f13-4f88-9ec0-14a89563830a | Ghost | Tester | Parijs | Prijs: 85.0
 Aankoop : 85a88f7b-b58a-4111-925f-aceb91a42561 | Ghost | Tester | Parijs | Prijs: 85.0
 Aankoop : 9d4cb4a6-6558-405f-80ad-4cc97c176307 | Salma | Benhadi | Parijs | Prijs: 120.0
+Aankoop : f5eba3ec-ba6c-481e-81d2-bd7fd3ea3771 | Reniama | Safa | Amsterdam | Prijs: 135.0
+Aankoop : 3b32a77f-435a-4235-b5b8-3e41f0f8da97 | Van steertegem | dqvid | Parijs | Prijs: 170.0
+Aankoop : d364bd4f-668a-4e65-9107-a5269a6db5a2 | aDESANYA | jos | Parijs | Prijs: 170.0

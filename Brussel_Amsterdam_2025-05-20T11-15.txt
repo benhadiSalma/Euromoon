@@ -1,0 +1,21 @@
+=========================================
+              BOARDINGLIJST              
+=========================================
+Reis: Brussel -> Amsterdam
+Vertrek: 2025-05-20T11:15
+Trein: Brussel-Amsterdam
+-----------------------------------------
+Passagier #1
+ - Naam: Reniama Safa
+ - RRN: 20.02.30-153.32
+ - Ticket ID: f5eba3ec-ba6c-481e-81d2-bd7fd3ea3771
+-----------------------------------------
+Totaal passagiers: 1
+
+=========================================
+               BOORDPERSONEEL
+            =========================================
+- Steward: Asushi Lina
+- Steward: Hurani Marwan
+- Steward: Bensahour Sara
+- Conductor: Aaiachi Farid
